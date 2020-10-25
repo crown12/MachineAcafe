@@ -11,6 +11,7 @@ namespace Machine.Data.Repo
         List<Order> orders = new List<Order>();
         public Order AddOrder(Order order)
         {
+            order.OrderDate = DateTime.Now;
             orders.Add(order);
             return order;
         }

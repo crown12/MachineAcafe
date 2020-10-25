@@ -25,6 +25,8 @@ namespace machineAcafe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDrink, InMemoryDrinks>();
+            services.AddScoped<IBadge, InMemoryBadges>();
+            services.AddScoped<IOrder, InMemoryOrders>();
             services.AddRazorPages();
         }
 
