@@ -39,3 +39,4 @@ E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.dll
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.dll
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.pdb
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.pdb
+E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\AvailableDrinks\ServeDrink.cshtml.g.cs

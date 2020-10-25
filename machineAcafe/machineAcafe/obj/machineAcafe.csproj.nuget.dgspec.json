@@ -147,6 +147,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "E:\\users\\Exam\\machineAcafe\\Machine.Core\\Machine.Core.csproj": {
+                "projectPath": "E:\\users\\Exam\\machineAcafe\\Machine.Core\\Machine.Core.csproj"
+              },
               "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj": {
                 "projectPath": "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj"
               }

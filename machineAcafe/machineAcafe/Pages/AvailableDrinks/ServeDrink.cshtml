@@ -1,0 +1,68 @@
+﻿@page
+@model machineAcafe.Pages.AvailableDrinks.ServeDrinkModel
+@{
+}
+
+<h3 class="alert alert-light">Prepare your drink:</h3>
+<div class="border container col-6" style="padding:30px;">
+    
+    <form method="post">
+        <div class="form-group row ">
+            <div class="col-3">
+                <label> Badge : </label>
+            </div>
+            <div class="col-7">
+                <input class="form-control" /> <span class="badge badge-info"> Optional </span>
+            </div>
+        </div>
+
+        <div class="form-group row ">
+            <div class="col-3">
+                <label> Drink : </label>
+            </div>
+            <div class="col-7">
+                <select class="form-control"
+                        asp-items="@(new SelectList(Model.Drinks,"Id", "Name"))">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row ">
+            <div class="col-3">
+                <label> Sugar : </label>
+            </div>
+            <div class="col-7">
+                <select class="form-control"
+                        asp-items="@(new SelectList(Model.Drinks,"Id", "Name"))">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row ">
+            <div class="col-3">
+                <label> Own Mug : </label>
+            </div>
+            <div class="col-7">
+                <select class="form-control">
+                    <option value="">Personal Mug</option>
+                    <option value="true"> Yes, I have it.</option>
+                    <option value="false"> No, I don't have it.</option>
+
+                </select>
+            </div>
+        </div>
+        <hr />
+
+
+
+
+        <div class="form-group row ">
+            <div class="col-6">
+                <button class="btn btn-primary btn-block" type="submit"> Order   </button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-secondary btn-block"> Cancel   </button>
+            </div>
+        </div>
+    </form>
+</div>
