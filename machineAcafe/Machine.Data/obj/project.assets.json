@@ -11,19 +11,6 @@
         "runtime": {
           "bin/placeholder/Machine.Core.dll": {}
         }
-      },
-      "Machine.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Machine.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Machine.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Machine.Data.dll": {}
-        }
       }
     }
   },
@@ -32,16 +19,11 @@
       "type": "project",
       "path": "../Machine.Core/Machine.Core.csproj",
       "msbuildProject": "../Machine.Core/Machine.Core.csproj"
-    },
-    "Machine.Data/1.0.0": {
-      "type": "project",
-      "path": "../Machine.Data/Machine.Data.csproj",
-      "msbuildProject": "../Machine.Data/Machine.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Machine.Data >= 1.0.0"
+      "Machine.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -51,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\users\\Exam\\machineAcafe\\machineAcafe\\machineAcafe.csproj",
-      "projectName": "machineAcafe",
-      "projectPath": "E:\\users\\Exam\\machineAcafe\\machineAcafe\\machineAcafe.csproj",
+      "projectUniqueName": "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj",
+      "projectName": "Machine.Data",
+      "projectPath": "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj",
       "packagesPath": "C:\\Users\\Fathi CHABANE\\.nuget\\packages\\",
-      "outputPath": "E:\\users\\Exam\\machineAcafe\\machineAcafe\\obj\\",
+      "outputPath": "E:\\users\\Exam\\machineAcafe\\Machine.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -75,8 +57,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj": {
-              "projectPath": "E:\\users\\Exam\\machineAcafe\\Machine.Data\\Machine.Data.csproj"
+            "E:\\users\\Exam\\machineAcafe\\Machine.Core\\Machine.Core.csproj": {
+              "projectPath": "E:\\users\\Exam\\machineAcafe\\Machine.Core\\Machine.Core.csproj"
             }
           }
         }
@@ -100,9 +82,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
