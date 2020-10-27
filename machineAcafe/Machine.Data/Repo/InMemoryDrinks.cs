@@ -25,5 +25,10 @@ namespace Machine.Data.Repo
                    orderby d.Id 
                    select d;
         }
+
+        public Drink GetDrinkById(int id)
+        {
+            return Drinks.SingleOrDefault(d => d.Id == id);
+        }
     }
 }

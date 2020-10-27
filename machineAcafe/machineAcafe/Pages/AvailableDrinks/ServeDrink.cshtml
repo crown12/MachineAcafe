@@ -4,24 +4,26 @@
 }
 
 <h3 class="alert alert-light">Prepare your drink:</h3>
+
 <div class="border container col-6" style="padding:30px;">
     
     <form method="post">
         <div class="form-group row ">
             <div class="col-3">
-                <label> Badge : </label>
+                <label asp-for="Order.Badge.Serial"> Badge : </label>
             </div>
             <div class="col-7">
-                <input class="form-control" /> <span class="badge badge-info"> Optional </span>
+                <input class="form-control"  asp-for="Order.Badge.Serial" /> <span class="badge badge-info"> Optional </span>
             </div>
         </div>
 
         <div class="form-group row ">
             <div class="col-3">
-                <label> Drink : </label>
+                <label asp-for="Order.Drink.Name"> Drink : </label>
             </div>
             <div class="col-7">
                 <select class="form-control"
+                        asp-for="Order.Drink.Id"
                         asp-items="@(new SelectList(Model.Drinks,"Id", "Name"))">
                 </select>
             </div>
@@ -29,20 +31,20 @@
 
         <div class="form-group row ">
             <div class="col-3">
-                <label> Sugar : </label>
+                <label asp-for="Order.Drink.Sugar"> Sugar : </label>
             </div>
             <div class="col-3">
-                <input class="form-control" /> 
+                <input class="form-control" asp-for="Order.Drink.Sugar" /> 
             </div>
         </div>
 
         <div class="form-group row ">
             <div class="col-3">
-                <label> Own Mug : </label>
+                <label asp-for="Order.Mug"> Own Mug : </label>
             </div>
             <div class="col-7">
-                <select class="form-control">
-                    <option value="">Personal Mug</option>
+                <select class="form-control" asp-for="Order.Mug">
+                    <option value="">Personal Mug?</option>
                     <option value="true"> Yes, I have it.</option>
                     <option value="false"> No, I don't have it.</option>
 

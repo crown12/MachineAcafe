@@ -8,6 +8,7 @@ namespace Machine.Data.Repo
     public interface IDrink
     {
         IEnumerable<Drink> GetAllDrinks();
+        Drink GetDrinkById(int id);
 
     }
 }

@@ -9,5 +9,6 @@ namespace Machine.Data.Repo
     {
         Order GetLastOrder();
         Order AddOrder(Order order);
+        IEnumerable<Order> GetAllOrders();
     }
 }

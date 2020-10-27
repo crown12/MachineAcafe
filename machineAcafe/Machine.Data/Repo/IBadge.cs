@@ -7,6 +7,6 @@ namespace Machine.Data.Repo
 {
     public interface IBadge
     {
-        bool Find(string serial);
+        Badge Find(string serial);
     }
 }

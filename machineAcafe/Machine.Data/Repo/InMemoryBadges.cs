@@ -17,11 +17,9 @@ namespace Machine.Data.Repo
             };
         }
 
-        public bool Find(string serial)
-        { 
-            return  (from b in badges
-                     where b.Serial.StartsWith(serial)
-                     select b).Count() > 0 ? true : false;
+        public Badge Find(string serial)
+        {
+            return badges.SingleOrDefault(b => b.Serial.StartsWith(serial));
         }
     }
 }

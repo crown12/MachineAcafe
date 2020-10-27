@@ -10,7 +10,7 @@ namespace Machine.Core.Entities
         
         public Drink Drink{ get; set; }
         
-        public Badge Badges { get; set; }
+        public Badge Badge { get; set; }
         
         public DateTime OrderDate { get; set; }
         public bool Mug { get; set; }
