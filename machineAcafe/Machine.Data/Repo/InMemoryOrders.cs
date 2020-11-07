@@ -32,5 +32,9 @@ namespace Machine.Data.Repo
             return orders.OrderByDescending(o => o.OrderDate).Take(1).Single();                
         }
 
+        public Order GetOrderByBadgeId(int? badgeId)
+        {
+            return orders.Find(o => o.Badge.Id == badgeId);
+        }
     }
 }

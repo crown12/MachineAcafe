@@ -1,7 +1,6 @@
 E:\users\Exam\machineAcafe\Machine.Core\bin\Debug\netcoreapp3.1\Machine.Core.deps.json
 E:\users\Exam\machineAcafe\Machine.Core\bin\Debug\netcoreapp3.1\Machine.Core.dll
 E:\users\Exam\machineAcafe\Machine.Core\bin\Debug\netcoreapp3.1\Machine.Core.pdb
-E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.csprojAssemblyReference.cache
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.AssemblyInfoInputs.cache
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.AssemblyInfo.cs
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.csproj.CoreCompileInputs.cache

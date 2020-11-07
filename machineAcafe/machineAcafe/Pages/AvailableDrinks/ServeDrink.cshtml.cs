@@ -30,39 +30,43 @@ namespace machineAcafe.Pages.AvailableDrinks
         [BindProperty]
         public Order Order { get; set; }
 
+        [BindProperty]
+        public Badge Badge { get; set; }
+
+        [BindProperty]
+        public Drink Drink { get; set; }
+
+        //[BindProperty(SupportsGet = true)]
+        //public string BadgeId { get; set; }
+
         public void OnGet()
         {
             Drinks = drinks.GetAllDrinks().ToList();
-            
+           
         }
 
         public IActionResult OnPost()
-        {
-            var badgeExists = new Badge();
-
-            if (Order.Badge.Serial!=null)
-            {  
-               badgeExists=  badge.Find(Order.Badge.Serial); 
-            }
-            
-            var quantity = Order.Drink.Sugar;
-
-            if(badgeExists!= null)
+        {                        
+            if (badge.Find(Badge.Serial) != null && ModelState.IsValid )
             {
-                Order.Badge = badgeExists;
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                Order.Drink = drinks.GetDrinkById(Drink.Id);
+                Order.Badge = badge.Find(Badge.Serial);
+                Order.Badge.Mug = Badge.Mug;
                 
-                var drink = drinks.GetDrinkById(Order.Drink.Id);
-                var sugar = new Sugar(Order.Drink.Sugar);
-                
-                sugar.Add(drink);
+                var sugar = new Sugar(Drink.Sugar);
+                sugar.Add(Order.Drink);
 
-                
-                Order.Drink = drink;
                 order.AddOrder(Order);
-            }
+           
             var myOrders = order.GetAllOrders();
-
-            return RedirectToPage("../Index");
+            }
+            else
+            {
+                Drinks = drinks.GetAllDrinks().ToList();
+                return Page();
+            }
+            return RedirectToPage("/Index");
         }
     }
 }

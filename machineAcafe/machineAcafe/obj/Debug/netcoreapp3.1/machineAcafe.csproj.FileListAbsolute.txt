@@ -9,6 +9,10 @@ E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\machineAcafe.dll
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\machineAcafe.pdb
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\machineAcafe.Views.dll
 E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\machineAcafe.Views.pdb
+E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.dll
+E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.dll
+E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.pdb
+E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.pdb
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.csprojAssemblyReference.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.AssemblyInfoInputs.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.AssemblyInfo.cs
@@ -19,6 +23,7 @@ E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.Raz
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.TagHelpers.input.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.TagHelpers.output.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.RazorCoreGenerate.cache
+E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\AvailableDrinks\ServeDrink.cshtml.g.cs
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
@@ -29,14 +34,9 @@ E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\_Vie
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.RazorTargetAssemblyInfo.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.RazorTargetAssemblyInfo.cs
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.Views.pdb
+E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.csproj.CopyComplete
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\staticwebassets\machineAcafe.StaticWebAssets.Manifest.cache
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\staticwebassets\machineAcafe.StaticWebAssets.xml
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.dll
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.pdb
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.genruntimeconfig.cache
-E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.csproj.CopyComplete
-E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.dll
-E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.dll
-E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Data.pdb
-E:\users\Exam\machineAcafe\machineAcafe\bin\Debug\netcoreapp3.1\Machine.Core.pdb
-E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\AvailableDrinks\ServeDrink.cshtml.g.cs
