@@ -40,3 +40,4 @@ E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\staticwebassets\
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.dll
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.pdb
 E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\machineAcafe.genruntimeconfig.cache
+E:\users\Exam\machineAcafe\machineAcafe\obj\Debug\netcoreapp3.1\Razor\Pages\AvailableDrinks\Thanks.cshtml.g.cs

@@ -47,26 +47,35 @@ namespace machineAcafe.Pages.AvailableDrinks
 
         public IActionResult OnPost()
         {                        
-            if (badge.Find(Badge.Serial) != null && ModelState.IsValid )
+            if (ModelState.IsValid )
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                Order.Drink = drinks.GetDrinkById(Drink.Id);
-                Order.Badge = badge.Find(Badge.Serial);
-                Order.Badge.Mug = Badge.Mug;
-                
-                var sugar = new Sugar(Drink.Sugar);
-                sugar.Add(Order.Drink);
+                if (badge.Find(Badge.Serial) != null)
+                {
+                    
+                   //var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    Order.Drink = drinks.GetDrinkById(Drink.Id);
+                    Order.Badge = badge.Find(Badge.Serial);
+                    Order.Badge.Mug = Badge.Mug;
 
-                order.AddOrder(Order);
+                    var sugar = new Sugar(Drink.Sugar);
+                    sugar.Add(Order.Drink);
+
+                    order.AddOrder(Order);
+                }
+                else
+                {
+                    return RedirectToPage("./Thanks");
+                }
            
-            var myOrders = order.GetAllOrders();
+            
             }
             else
             {
                 Drinks = drinks.GetAllDrinks().ToList();
                 return Page();
             }
-            return RedirectToPage("/Index");
+           
+            return RedirectToPage("./Thanks");
         }
     }
 }

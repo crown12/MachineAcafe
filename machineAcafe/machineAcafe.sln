@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "machineAcafe", "machineAcafe\machineAcafe.csproj", "{206F2335-EEEC-40B3-8DB2-6326FA51069F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "machineAcafe", "machineAcafe\machineAcafe.csproj", "{206F2335-EEEC-40B3-8DB2-6326FA51069F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Machine.Core", "Machine.Core\Machine.Core.csproj", "{E7C5F9D3-EE40-4BEF-99C4-4E075F17E4E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Machine.Core", "Machine.Core\Machine.Core.csproj", "{E7C5F9D3-EE40-4BEF-99C4-4E075F17E4E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Machine.Data", "Machine.Data\Machine.Data.csproj", "{505700FE-7C12-479D-9125-139C82C2F6D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Machine.Data", "Machine.Data\Machine.Data.csproj", "{505700FE-7C12-479D-9125-139C82C2F6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
