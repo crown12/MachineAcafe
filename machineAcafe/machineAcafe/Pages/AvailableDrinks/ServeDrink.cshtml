@@ -6,7 +6,7 @@
 <h3 class="alert alert-light">Prepare your drink:</h3>
 
 <div class="border container col-6" style="padding:30px;">
-    
+
     <form method="post">
 
         <div class="form-group row ">
@@ -14,8 +14,9 @@
                 <label asp-for="Badge.Serial"> Badge : </label>
             </div>
             <div class="col-7">
-                <input class="form-control" asp-for="Badge.Serial" /> <span class="badge badge-info"> Optional </span>
+                <input  id="badge" class="form-control" asp-for="Badge.Serial" /> <span class="badge badge-info"> Optional </span>
             </div>
+            <div class="alert-info" id="lastOrder"></div>
         </div>
 
         <div class="form-group row ">
@@ -30,13 +31,13 @@
             </div>
         </div>
 
-        
+
         <div class="form-group row ">
             <div class="col-3">
                 <label asp-for="Drink.Sugar"> Sugar : </label>
             </div>
             <div class="col-3">
-                <input class="form-control" asp-for="Drink.Sugar" />
+                <input id="drink" class="form-control" asp-for="Drink.Sugar" />
             </div>
             <span asp-validation-for="Drink.Sugar" class="text-danger"></span>
         </div>
@@ -71,3 +72,20 @@
         </div>
     </form>
 </div>
+
+@section Scripts{
+    <script>
+        
+        
+        $(document).ready(function () {
+           
+            $("#badge").change(function () {
+                var badgeString = $("#badge").val();
+                
+                $("#lastOrder").text(badgeString);
+                alert(badgeString);
+            });
+
+        });
+    </script>
+}

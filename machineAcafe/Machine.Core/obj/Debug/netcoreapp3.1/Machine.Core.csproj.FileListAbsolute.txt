@@ -6,3 +6,4 @@ E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.Ass
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.csproj.CoreCompileInputs.cache
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.dll
 E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.pdb
+E:\users\Exam\machineAcafe\Machine.Core\obj\Debug\netcoreapp3.1\Machine.Core.csprojAssemblyReference.cache

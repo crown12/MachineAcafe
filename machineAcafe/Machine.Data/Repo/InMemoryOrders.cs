@@ -13,11 +13,7 @@ namespace Machine.Data.Repo
        
         public Order AddOrder(Order order)
         {
-            
-
             order.OrderDate = DateTime.Now;
-
-           
             orders.Add(order);
             return order;
         }
