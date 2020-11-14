@@ -14,7 +14,7 @@ namespace Machine.Data.Repo
         {
             Drinks = new List<Drink>
             {
-                new Drink{Id=1,Name="Coffee"},
+                new Drink{Id=1,Name="Coffee",Sugar=20},
                 new Drink{Id=2,Name="Tea"},
                 new Drink{Id=3,Name="Chocolat"}
             };

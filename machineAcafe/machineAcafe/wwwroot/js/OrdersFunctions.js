@@ -23,7 +23,8 @@ function AskingDialog(lastOrder)
         var drink = lastOrder.drink;
         var badge = lastOrder.badge;
         bootbox.confirm({
-            message: "Hi <b>" + badge.name + "</b> Would you like to have a <b>" + drink.name + "</b> as the last time",
+            message: "Hi <b>" + badge.name + "</b> Would you like to have a <b>"
+                        + drink.name + "</b> as the last time",
             buttons: {
                 confirm: {
                     label: 'Yes',
@@ -36,7 +37,10 @@ function AskingDialog(lastOrder)
             },
             callback: function (result) {
                 if (result === true) {
-                    console.log("Thanks  " + badge.name + " for using our services.");
+                    $("#drink").val(drink.id);
+                    $("#sugar").val(drink.sugar);
+                    if (badge.mug === true) { $("#sltMug").val("true"); }
+                    else { $("#sltMug").val("false");}
                 }
             }
         });

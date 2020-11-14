@@ -24,7 +24,7 @@
                 <label asp-for="Drink.Name"> Drink : </label>
             </div>
             <div class="col-7">
-                <select class="form-control"
+                <select id="drink" class="form-control"
                         asp-for="Drink.Id"
                         asp-items="@(new SelectList(Model.Drinks,"Id", "Name"))">
                 </select>
@@ -37,7 +37,7 @@
                 <label asp-for="Drink.Sugar"> Sugar : </label>
             </div>
             <div class="col-3">
-                <input id="drink" class="form-control" asp-for="Drink.Sugar" />
+                <input id="sugar" class="form-control" asp-for="Drink.Sugar" />
             </div>
             <span asp-validation-for="Drink.Sugar" class="text-danger"></span>
         </div>
@@ -47,7 +47,7 @@
                 <label asp-for="Badge.Mug"> Own Mug : </label>
             </div>
             <div class="col-7">
-                <select class="form-control" asp-for="Badge.Mug">
+                <select id="sltMug" class="form-control" asp-for="Badge.Mug">
                     <option value="">Personal Mug?</option>
                     <option value="true"> Yes, I have it.</option>
                     <option value="false"> No, I don't have it.</option>

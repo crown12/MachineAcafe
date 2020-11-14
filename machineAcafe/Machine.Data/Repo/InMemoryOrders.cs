@@ -17,15 +17,14 @@ namespace Machine.Data.Repo
             this._drink = drink;
 
             orders = new List<Order> { 
-                new Order{Id=1,Badge=_badge.Find("1234"),Drink=_drink.GetDrinkById(1)},
-                new Order{Id=2,Badge=_badge.Find("5678"),Drink=_drink.GetDrinkById(2)}
+                new Order{Id=1,Badge=_badge.Find("1234"),Drink=_drink.GetDrinkById(1), OrderDate= DateTime.Now.AddDays(-2) } ,
+                new Order{Id=2,Badge=_badge.Find("5678"),Drink=_drink.GetDrinkById(2),OrderDate= DateTime.Now.AddDays(-1)}
             };
             
         }
        
         public Order AddOrder(Order order)
         {
-            
             order.OrderDate = DateTime.Now;
             orders.Add(order);
             return order;

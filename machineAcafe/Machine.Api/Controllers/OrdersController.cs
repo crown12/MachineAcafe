@@ -39,7 +39,7 @@ namespace Machine.Api.Controllers
         [HttpPost]
         public void Post([FromBody] Order order)
         {
-            order.Id = 0;
+            
             orders.AddOrder(order);
         }
 
