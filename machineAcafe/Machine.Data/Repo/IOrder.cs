@@ -11,5 +11,6 @@ namespace Machine.Data.Repo
         Order AddOrder(Order order);
         IEnumerable<Order> GetAllOrders();
         Order GetOrderByBadgeId(int? badgeId);
+        Order GetOrderByBadgeSerial(string serial);
     }
 }

@@ -80,10 +80,24 @@
         $(document).ready(function () {
            
             $("#badge").change(function () {
-                var badgeString = $("#badge").val();
-                
-                $("#lastOrder").text(badgeString);
-                alert(badgeString);
+                var serial = $("#badge").val();
+                let urlData = "https://localhost:44387/api/Orders/" + serial;
+                var lastOrder = function () {
+                    var tmp = null;
+                    $.ajax({
+                        type:"get",
+                        url: urlData,                        
+                        dataType: "json",
+                        async: false,
+                        success: function (result) {
+                            tmp = result;
+                            //console.log(lastOrder);
+                        }
+
+                    });
+                    return tmp;
+                }();
+                console.log(lastOrder);
             });
 
         });

@@ -9,6 +9,7 @@ namespace Machine.Data.Repo
     public class InMemoryBadges : IBadge
     {
         public List<Badge> badges;
+     
         public InMemoryBadges()
         {
             badges = new List<Badge> { 

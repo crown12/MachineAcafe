@@ -8,11 +8,24 @@ namespace Machine.Data.Repo
 {
     public class InMemoryOrders : IOrder
     {
-        
+        private readonly IBadge _badge;
+        private readonly IDrink _drink;
         List<Order> orders = new List<Order>();
+        public InMemoryOrders(IBadge badge, IDrink drink)
+        {           
+            this._badge = badge;
+            this._drink = drink;
+
+            orders = new List<Order> { 
+                new Order{Id=1,Badge=_badge.Find("1234"),Drink=_drink.GetDrinkById(1)},
+                new Order{Id=2,Badge=_badge.Find("5678"),Drink=_drink.GetDrinkById(2)}
+            };
+            
+        }
        
         public Order AddOrder(Order order)
         {
+            
             order.OrderDate = DateTime.Now;
             orders.Add(order);
             return order;
@@ -31,6 +44,15 @@ namespace Machine.Data.Repo
         public Order GetOrderByBadgeId(int? badgeId)
         {
             return orders.Find(o => o.Badge.Id == badgeId);
+        }
+
+        public Order GetOrderByBadgeSerial(string serial)
+        {
+            //return orders.SingleOrDefault(b => b.Badge.Serial.StartsWith(serial));
+            var qeury = from o in orders
+                        where o.Badge.Serial.Equals(serial)
+                        select o;
+            return qeury.Single();
         }
     }
 }
