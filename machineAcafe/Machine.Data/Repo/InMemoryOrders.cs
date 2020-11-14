@@ -49,10 +49,14 @@ namespace Machine.Data.Repo
         public Order GetOrderByBadgeSerial(string serial)
         {
             //return orders.SingleOrDefault(b => b.Badge.Serial.StartsWith(serial));
-            var qeury = from o in orders
+            var query = from o in orders
+                        orderby o.OrderDate descending
                         where o.Badge.Serial.Equals(serial)
                         select o;
-            return qeury.Single();
+            if (query.Count() <= 0 || serial == null)
+                return null;
+            else
+               return query.Single(); 
         }
     }
 }

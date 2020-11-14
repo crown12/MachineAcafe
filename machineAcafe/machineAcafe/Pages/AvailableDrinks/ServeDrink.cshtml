@@ -14,7 +14,7 @@
                 <label asp-for="Badge.Serial"> Badge : </label>
             </div>
             <div class="col-7">
-                <input  id="badge" class="form-control" asp-for="Badge.Serial" /> <span class="badge badge-info"> Optional </span>
+                <input id="badge" class="form-control" asp-for="Badge.Serial" /> <span class="badge badge-info"> Optional </span>
             </div>
             <div class="alert-info" id="lastOrder"></div>
         </div>
@@ -74,32 +74,5 @@
 </div>
 
 @section Scripts{
-    <script>
-        
-        
-        $(document).ready(function () {
-           
-            $("#badge").change(function () {
-                var serial = $("#badge").val();
-                let urlData = "https://localhost:44387/api/Orders/" + serial;
-                var lastOrder = function () {
-                    var tmp = null;
-                    $.ajax({
-                        type:"get",
-                        url: urlData,                        
-                        dataType: "json",
-                        async: false,
-                        success: function (result) {
-                            tmp = result;
-                            //console.log(lastOrder);
-                        }
-
-                    });
-                    return tmp;
-                }();
-                console.log(lastOrder);
-            });
-
-        });
-    </script>
+    <script src="~/js/OrdersFunctions.js"></script>
 }
