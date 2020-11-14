@@ -22,7 +22,24 @@ function AskingDialog(lastOrder)
     if (lastOrder != null) {
         var drink = lastOrder.drink;
         var badge = lastOrder.badge;
-        alert("Hi <b>" + badge.name + "</b> Would you like to have a <b>" + drink.name + "</b> as the last time")
+        bootbox.confirm({
+            message: "Hi <b>" + badge.name + "</b> Would you like to have a <b>" + drink.name + "</b> as the last time",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result === true) {
+                    console.log("Thanks  " + badge.name + " for using our services.");
+                }
+            }
+        });
     }
 }
 

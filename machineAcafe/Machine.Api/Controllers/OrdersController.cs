@@ -14,31 +14,33 @@ namespace Machine.Api.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrder order;
+        private readonly IOrder orders;
 
         public OrdersController(IOrder order)
         {
-            this.order = order;
+            this.orders = order;
         }
 
         // GET: api/<OrdersController>
         [HttpGet]
         public IEnumerable<Order> GetAllOrders ()
         {
-            return order.GetAllOrders();
+            return orders.GetAllOrders();
         }
 
         // GET api/<OrdersController>/5
        [HttpGet("{serial}")]
         public Order GetOrderByBadgeSerial(string serial)
         {
-            return order.GetOrderByBadgeSerial(serial);
+            return orders.GetOrderByBadgeSerial(serial);
         }
 
         // POST api/<OrdersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Order order)
         {
+            order.Id = 0;
+            orders.AddOrder(order);
         }
 
         // PUT api/<OrdersController>/5
