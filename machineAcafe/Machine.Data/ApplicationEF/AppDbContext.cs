@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Machine.Data.ApplicationEF
 {
-    public class AppDbContext : DbContext
+    public partial class AppDbContext : DbContext
     {
+
+
 
     }
 }
