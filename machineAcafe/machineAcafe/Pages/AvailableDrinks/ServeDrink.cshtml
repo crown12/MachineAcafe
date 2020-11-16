@@ -34,12 +34,12 @@
 
         <div class="form-group row ">
             <div class="col-3">
-                <label asp-for="Sugar"> Sugar : </label>
+                <label asp-for="Sugar.Quantity"> Sugar : </label>
             </div>
             <div class="col-3">
-                <input id="sugar" class="form-control" asp-for="Sugar" />
+                <input id="sugar" class="form-control" asp-for="Sugar.Quantity" />
             </div>
-            <span asp-validation-for="Sugar" class="text-danger"></span>
+            <span asp-validation-for="Sugar.Quantity" class="text-danger"></span>
         </div>
 
         <div class="form-group row ">
@@ -73,6 +73,6 @@
     </form>
 </div>
 
-@section Scripts{
+@*@section Scripts{
     <script src="~/js/OrdersFunctions.js"></script>
-}
+}*@

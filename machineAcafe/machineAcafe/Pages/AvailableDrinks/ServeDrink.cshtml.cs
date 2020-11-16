@@ -22,12 +22,14 @@ namespace machineAcafe.Pages.AvailableDrinks
         private readonly IDrink drinks;
         private readonly IBadge badge;
         private readonly IOrder order;
+        private readonly IOrderDetail orderDetail;
 
-        public ServeDrinkModel(IDrink drinks, IBadge badge, IOrder order)
+        public ServeDrinkModel(IDrink drinks, IBadge badge, IOrder order, IOrderDetail orderDetail)
         {
             this.drinks = drinks;
             this.badge = badge;
             this.order = order;
+            this.orderDetail = orderDetail;
         }
 
         public List<Drink> Drinks{ get; set; }
@@ -43,9 +45,9 @@ namespace machineAcafe.Pages.AvailableDrinks
 
         [BindProperty]
         public OrderDetails OrderDtl{ get; set; }
-
-        [BindProperty]
-        public int Sugar { get; set; }
+        
+        [BindProperty(SupportsGet =true)]        
+        public  Sugar Sugar { get; set; }
         //[BindProperty(SupportsGet = true)]
         //public string BadgeId { get; set; }
 
@@ -53,25 +55,27 @@ namespace machineAcafe.Pages.AvailableDrinks
         {
             
             Drinks = drinks.GetAllDrinks().ToList();
+            
+            Sugar.Quantity = 20;
 
         }
 
         public IActionResult OnPost()
-        {                        
+        {
+          
             if (ModelState.IsValid )
             {
+                
                 if (badge.Find(Badge.Serial) != null)
-                {
-                    
-                   //var errors = ModelState.Values.SelectMany(v => v.Errors);
+                {                    
                     OrderDtl.Drink = drinks.GetDrinkById(Drink.Id);
-                    Order.Badge = badge.Find(Badge.Serial);
-                    
-
-                    var sugar = new Sugar(Sugar);
-                    sugar.Add(OrderDtl);
+                    Order.Badge = badge.Find(Badge.Serial);                 
+                    Sugar.Add(OrderDtl);
 
                     order.AddOrder(Order);
+                    
+                    var result = orderDetail.Add(OrderDtl, Order.Badge.Id);
+
                 }
                 else
                 {
@@ -83,6 +87,7 @@ namespace machineAcafe.Pages.AvailableDrinks
             else
             {
                 Drinks =  drinks.GetAllDrinks().ToList();
+               // var errors = ModelState.Values.SelectMany(v => v.Errors);
                 return Page();
             }
            

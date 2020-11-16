@@ -26,6 +26,7 @@ namespace Machine.Data.Repo
         public Order AddOrder(Order order)
         {
             order.OrderDate = DateTime.Now;
+            order.Id = orders.OrderByDescending(o => o.Id).First().Id + 1 ;
             orders.Add(order);
             return order;
         }
@@ -42,7 +43,7 @@ namespace Machine.Data.Repo
 
         public Order GetOrderByBadgeId(int? badgeId)
         {
-            return orders.Find(o => o.Badge.Id == badgeId);
+            return orders.OrderByDescending(o => o.OrderDate).Take(1).Single();
         }
 
         public Order GetOrderByBadgeSerial(string serial)

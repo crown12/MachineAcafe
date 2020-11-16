@@ -32,7 +32,7 @@ namespace Machine.Api
             services.AddScoped<IDrink, InMemoryDrinks>();
             services.AddScoped<IBadge, InMemoryBadges>();
             services.AddScoped<IOrder, InMemoryOrders>();
-            
+            services.AddScoped<IOrderDetail, InMemoryOrderDetails>();
             services.AddCors(option => option.AddDefaultPolicy(
                 builder => builder.AllowAnyOrigin()
                 ));
