@@ -1,6 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Machine.Core.Entities;
 using Machine.Data.Repo;
@@ -9,6 +12,8 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
+//using Newtonsoft.Json;
 
 namespace machineAcafe.Pages.AvailableDrinks
 {
@@ -41,8 +46,9 @@ namespace machineAcafe.Pages.AvailableDrinks
 
         public void OnGet()
         {
+            
             Drinks = drinks.GetAllDrinks().ToList();
-           
+
         }
 
         public IActionResult OnPost()
@@ -71,7 +77,7 @@ namespace machineAcafe.Pages.AvailableDrinks
             }
             else
             {
-                Drinks = drinks.GetAllDrinks().ToList();
+                Drinks =  drinks.GetAllDrinks().ToList();
                 return Page();
             }
            

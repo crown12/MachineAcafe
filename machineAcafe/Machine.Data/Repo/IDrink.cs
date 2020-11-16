@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
     public interface IDrink
     {
-        IEnumerable<Drink> GetAllDrinks();
+        List<Drink> GetAllDrinks();
         Drink GetDrinkById(int id);
 
     }

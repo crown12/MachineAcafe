@@ -27,9 +27,12 @@ namespace Machine.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+
             services.AddScoped<IDrink, InMemoryDrinks>();
             services.AddScoped<IBadge, InMemoryBadges>();
             services.AddScoped<IOrder, InMemoryOrders>();
+            
             services.AddCors(option => option.AddDefaultPolicy(
                 builder => builder.AllowAnyOrigin()
                 ));

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
@@ -19,11 +20,9 @@ namespace Machine.Data.Repo
                 new Drink{Id=3,Name="Chocolat"}
             };
         }
-        public IEnumerable<Drink> GetAllDrinks()
+        public List<Drink> GetAllDrinks()
         {
-            return from d in Drinks
-                   orderby d.Id 
-                   select d;
+            return  Drinks.ToList();
         }
 
         public Drink GetDrinkById(int id)
