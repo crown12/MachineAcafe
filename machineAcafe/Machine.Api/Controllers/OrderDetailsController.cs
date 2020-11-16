@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Machine.Core.Entities;
 using Machine.Data.Repo;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,13 +14,13 @@ namespace Machine.Api.Controllers
     [ApiController]
     public class OrderDetailsController : ControllerBase
     {
-        private readonly IOrder order;
-        private readonly IOrderDetail orderDetail;
+        private readonly IOrder orders;
+        private readonly IOrderDetail orderDetails;
 
         public OrderDetailsController(IOrder order, IOrderDetail orderDetail)
         {
-            this.order = order;
-            this.orderDetail = orderDetail;
+            this.orders = order;
+            this.orderDetails = orderDetail;
         }
         // GET: api/<OrderDetailsController>
         [HttpGet]
@@ -30,10 +31,12 @@ namespace Machine.Api.Controllers
 
         // GET api/<OrderDetailsController>/5
         [HttpGet("{serial}")]
-        public string Get(int serial)
+        public OrderDetails Get(string serial)
         {
+            var order = orders.GetOrderByBadgeSerial(serial);
             
-            return "value";
+            return orderDetails.GetOrderDetailsByOrderId(order.Id);
+            
         }
 
         // POST api/<OrderDetailsController>

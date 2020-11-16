@@ -7,6 +7,7 @@ namespace Machine.Data.Repo
 {
     public interface IOrderDetail
     {
-        OrderDetails Add(OrderDetails orderDtl, int id);        
+        OrderDetails Add(OrderDetails orderDtl, int id);
+        OrderDetails GetOrderDetailsByOrderId(int id);
     }
 }

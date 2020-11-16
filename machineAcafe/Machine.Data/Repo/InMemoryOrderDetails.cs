@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Machine.Data.Repo
 {
@@ -18,7 +19,7 @@ namespace Machine.Data.Repo
             new OrderDetails{Id=1,Order=order.GetOrderByBadgeSerial("1234"),
                 Drink=drink.GetDrinkById(1),
                 SugarQuantity=20,Mug=false},
-            new OrderDetails{Id=1,Order=order.GetOrderByBadgeSerial("5678"),
+            new OrderDetails{Id=2,Order=order.GetOrderByBadgeSerial("5678"),
                 Drink=drink.GetDrinkById(3),
                 SugarQuantity=15,Mug=true}
             };
@@ -35,6 +36,11 @@ namespace Machine.Data.Repo
              orderDetails.Add(orderDtl);
             return orderDtl;
             
+        }
+
+        public OrderDetails GetOrderDetailsByOrderId(int id)
+        {
+            return orderDetails.FirstOrDefault(o => o.Id == id);
         }
     }
 }
