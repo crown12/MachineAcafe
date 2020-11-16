@@ -9,12 +9,9 @@ namespace Machine.Core.Entities
     {
         [Key]      
         public int Id { get; set; }
-
+                
+        public string Name { get; set; }     
         
-        public string Name { get; set; }        
-        
-        [Range(10,70, ErrorMessage = "Value must be from 10 to 70")]        
-        public int Sugar { get; set; }
     }
 
 }

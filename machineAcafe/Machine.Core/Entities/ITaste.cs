@@ -6,6 +6,6 @@ namespace Machine.Core.Entities
 {
     public interface ITaste
     {
-        void Add(Drink drink);
+        void Add(OrderDetails OrderDtl);
     }
 }

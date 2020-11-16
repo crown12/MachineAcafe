@@ -12,9 +12,9 @@ namespace Machine.Core.Entities
             this.quantity = quantity;
         }
 
-        public void Add(Drink drink)
+        public void Add(OrderDetails OrderDtl)
         {
-            drink.Sugar = quantity;
+            OrderDtl.SugarQuantity = quantity;
         }
     }
 }

@@ -41,6 +41,11 @@ namespace machineAcafe.Pages.AvailableDrinks
         [BindProperty]
         public Drink Drink { get; set; }
 
+        [BindProperty]
+        public OrderDetails OrderDtl{ get; set; }
+
+        [BindProperty]
+        public int Sugar { get; set; }
         //[BindProperty(SupportsGet = true)]
         //public string BadgeId { get; set; }
 
@@ -59,12 +64,12 @@ namespace machineAcafe.Pages.AvailableDrinks
                 {
                     
                    //var errors = ModelState.Values.SelectMany(v => v.Errors);
-                    Order.Drink = drinks.GetDrinkById(Drink.Id);
+                    OrderDtl.Drink = drinks.GetDrinkById(Drink.Id);
                     Order.Badge = badge.Find(Badge.Serial);
-                    Order.Badge.Mug = Badge.Mug;
+                    
 
-                    var sugar = new Sugar(Drink.Sugar);
-                    sugar.Add(Order.Drink);
+                    var sugar = new Sugar(Sugar);
+                    sugar.Add(OrderDtl);
 
                     order.AddOrder(Order);
                 }
