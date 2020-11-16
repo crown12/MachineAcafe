@@ -1,4 +1,6 @@
 E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.deps.json
+E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.runtimeconfig.json
+E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.runtimeconfig.dev.json
 E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.dll
 E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.pdb
 E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Core.dll
@@ -6,10 +8,8 @@ E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Core.pdb
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.csprojAssemblyReference.cache
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.AssemblyInfoInputs.cache
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.AssemblyInfo.cs
+E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.csproj.CoreCompileInputs.cache
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.csproj.CopyComplete
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.dll
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.pdb
-E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.runtimeconfig.json
-E:\users\Exam\machineAcafe\Machine.Data\bin\Debug\netcoreapp3.1\Machine.Data.runtimeconfig.dev.json
 E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.genruntimeconfig.cache
-E:\users\Exam\machineAcafe\Machine.Data\obj\Debug\netcoreapp3.1\Machine.Data.csproj.CoreCompileInputs.cache
