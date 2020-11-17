@@ -27,11 +27,11 @@ function AskingDialog(lastOrder) {
                 + drink.name + "</b> as the last time",
             buttons: {
                 confirm: {
-                    label: 'yes',
+                    label: 'Yes',
                     classname: 'btn-success'
                 },
                 cancel: {
-                    label: 'no',
+                    label: 'No',
                     classname: 'btn-danger'
                 }
             },

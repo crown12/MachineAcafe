@@ -44,12 +44,17 @@ namespace Machine.Data.Repo
 
         public async Task<Order> GetOrderByBadgeId(int? badgeId)
         {
-            return await context.orders.Include(o => o.Badge).OrderByDescending(o => o.OrderDate).FirstOrDefaultAsync(o => o.Badge.Id == badgeId);
+            return await context.orders.Include(o => o.Badge)
+                                       .OrderByDescending(o => o.OrderDate)
+                                       .FirstOrDefaultAsync(o => o.Badge.Id == badgeId);
         }
 
         public async Task<Order> GetOrderByBadgeSerial(string serial)
         {            
-            return await context.orders.Include(o => o.Badge).OrderByDescending(o => o.OrderDate).Where(o => o.Badge.Serial == serial).FirstAsync(); 
+            return await context.orders.Include(o => o.Badge)
+                                       .OrderByDescending(o => o.OrderDate)
+                                       .Where(o => o.Badge.Serial == serial)
+                                       .FirstAsync(); 
                 
         }
     }

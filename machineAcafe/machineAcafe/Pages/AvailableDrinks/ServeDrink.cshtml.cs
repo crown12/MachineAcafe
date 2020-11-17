@@ -38,10 +38,10 @@ namespace machineAcafe.Pages.AvailableDrinks
         [BindProperty(SupportsGet =true)]
         public DrinkOrder drinkOrder { get; set; }
        
-        public async Task OnGet()
-        {            
-            Drinks = await drinks.GetAllDrinks();            
-            //drinkOrder.Quantity = 6;            
+        public void  OnGet()
+        {
+
+            Drinks = GetDrinks();
         }
 
         public async Task<IActionResult> OnPost()
@@ -72,6 +72,22 @@ namespace machineAcafe.Pages.AvailableDrinks
             }
            
             return RedirectToPage("./Thanks");
+        }
+
+
+        public List<Drink> GetDrinks()
+        {
+            var url = "https://localhost:44387/api/drinks/";
+            var client = new HttpClient();
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            string stringData = response.Content.ReadAsStringAsync().Result;
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<List<Drink>>(stringData, options);
         }
     }
 }
