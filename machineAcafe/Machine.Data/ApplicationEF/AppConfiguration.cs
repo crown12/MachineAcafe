@@ -11,7 +11,8 @@ namespace Machine.Data.ApplicationEF
         public AppConfiguration()
         {
             var configBuilder = new ConfigurationBuilder();
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            //var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            var path = Path.Combine(@"E:\users\Exam\machineAcafe\machineAcafe", "appsettings.json");
             configBuilder.AddJsonFile(path, false);
 
             var root = configBuilder.Build();

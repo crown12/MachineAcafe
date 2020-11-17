@@ -10,6 +10,10 @@ namespace machineAcafe.ViewModels
 {
     public class DrinkOrder
     {
+        public DrinkOrder()
+        {
+            Quantity = 0;
+        }
         public string BadgeSerial{ get; set; }
         public int DrinkId { get; set; }
 

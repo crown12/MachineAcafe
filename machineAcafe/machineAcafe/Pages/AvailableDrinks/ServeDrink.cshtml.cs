@@ -37,12 +37,11 @@ namespace machineAcafe.Pages.AvailableDrinks
 
         [BindProperty(SupportsGet =true)]
         public DrinkOrder drinkOrder { get; set; }
-
-
+       
         public void OnGet()
         {            
             Drinks = drinks.GetAllDrinks().ToList();            
-            drinkOrder.Quantity = 6;            
+            //drinkOrder.Quantity = 6;            
         }
 
         public IActionResult OnPost()
