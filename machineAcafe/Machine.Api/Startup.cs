@@ -34,10 +34,10 @@ namespace Machine.Api
                                     options.UseSqlServer(
                                         appConfig.SqlConnection));
 
-            services.AddScoped<IDrink, sqlDrinks>();
-            services.AddScoped<IBadge, InMemoryBadges>();
-            services.AddScoped<IOrder, InMemoryOrders>();
-            services.AddScoped<IOrderDetail, InMemoryOrderDetails>();
+            services.AddScoped<IDrink, SqlDrinks>();
+            services.AddScoped<IBadge, SqlBadges>();
+            services.AddScoped<IOrder, SqlOrders>();
+            services.AddScoped<IOrderDetail, SqlOrderDetails>();
             services.AddCors(option => option.AddDefaultPolicy(
                 builder => builder.AllowAnyOrigin()
                 ));

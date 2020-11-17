@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Machine.Data.ApplicationEF;
 using Machine.Data.Repo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,10 +26,15 @@ namespace machineAcafe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddScoped<IDrink, sqlDrinks>();
-          //  services.AddScoped<IBadge, InMemoryBadges>();
-//            services.AddScoped<IOrder, InMemoryOrders>();
-  //          services.AddScoped<IOrderDetail, InMemoryOrderDetails>();
+            var appConfig = new AppConfiguration();
+            
+            services.AddDbContextPool<AppDbContext>(options =>
+                                    options.UseSqlServer(
+                                        appConfig.SqlConnection));
+            services.AddScoped<IDrink, SqlDrinks>();
+            services.AddScoped<IBadge, SqlBadges>();
+            services.AddScoped<IOrder, SqlOrders>();
+            services.AddScoped<IOrderDetail, SqlOrderDetails>();
             services.AddRazorPages();
         }
 

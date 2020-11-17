@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Machine.Core", "Machine.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Machine.Data", "Machine.Data\Machine.Data.csproj", "{505700FE-7C12-479D-9125-139C82C2F6D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Machine.Api", "Machine.Api\Machine.Api.csproj", "{BC98F4EA-55C1-4049-98D0-287B064DE97E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Machine.Api", "Machine.Api\Machine.Api.csproj", "{BC98F4EA-55C1-4049-98D0-287B064DE97E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,6 +16,7 @@ namespace Machine.Api.Controllers
     {
         private readonly IOrder orders;
 
+        
         public OrdersController(IOrder order)
         {
             this.orders = order;
@@ -23,24 +24,24 @@ namespace Machine.Api.Controllers
 
         // GET: api/<OrdersController>
         [HttpGet]
-        public IEnumerable<Order> GetAllOrders ()
+        public async Task<IEnumerable<Order>> GetAllOrders ()
         {
-            return orders.GetAllOrders();
+            return await orders.GetAllOrders();
         }
 
         // GET api/<OrdersController>/5
        [HttpGet("{serial}")]
-        public Order GetOrderByBadgeSerial(string serial)
+        public async Task<Order> GetOrderByBadgeSerial(string serial)
         {
-            return orders.GetOrderByBadgeSerial(serial);
+            return await orders.GetOrderByBadgeSerial(serial);
         }
 
         // POST api/<OrdersController>
         [HttpPost]
-        public void Post([FromBody] Order order)
+        public async Task Post([FromBody] Order order)
         {
             
-            orders.AddOrder(order);
+            await orders.AddOrder(order);
         }
 
         // PUT api/<OrdersController>/5

@@ -5,10 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="OldCdoe\**" />
+    <EmbeddedResource Remove="OldCdoe\**" />
+    <None Remove="OldCdoe\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20201117170527_CreatingDrinksTable.cs" />
     <Compile Remove="Migrations\20201117170527_CreatingDrinksTable.Designer.cs" />
     <Compile Remove="Migrations\20201117181754_PopulatingDrinksTable.cs" />
     <Compile Remove="Migrations\20201117181754_PopulatingDrinksTable.Designer.cs" />
+    <Compile Remove="Migrations\20201117212932_RenamingOrderAndBadges.cs" />
+    <Compile Remove="Migrations\20201117212932_RenamingOrderAndBadges.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

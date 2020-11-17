@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
-    public class sqlDrinks : IDrink
+    public class SqlDrinks : IDrink
     {
         private readonly AppDbContext context;
 
-        public sqlDrinks(AppDbContext  context)
+        public SqlDrinks(AppDbContext  context)
         {
             this.context = context;
         }

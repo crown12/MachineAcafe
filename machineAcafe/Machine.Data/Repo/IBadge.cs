@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
     public interface IBadge
     {
-        Badge Find(string serial);
+        Task<Badge> Find(string serial);
     }
 }

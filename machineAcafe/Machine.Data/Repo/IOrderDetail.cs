@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
     public interface IOrderDetail
     {
-        OrderDetails Add(OrderDetails orderDtl, int id);
-        OrderDetails GetOrderDetailsByOrderId(int id);
+        Task Add(OrderDetails orderDtl, int id);
+        Task<OrderDetails> GetOrderDetailsByOrderId(int id);
+        Task<int> Commit();
     }
 }

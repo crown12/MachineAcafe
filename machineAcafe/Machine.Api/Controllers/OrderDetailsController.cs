@@ -31,11 +31,11 @@ namespace Machine.Api.Controllers
 
         // GET api/<OrderDetailsController>/5
         [HttpGet("{serial}")]
-        public OrderDetails Get(string serial)
+        public async Task<OrderDetails> Get(string serial)
         {
-            var order = orders.GetOrderByBadgeSerial(serial);
+            var order = await orders.GetOrderByBadgeSerial(serial);
             
-            return orderDetails.GetOrderDetailsByOrderId(order.Id);
+            return await orderDetails.GetOrderDetailsByOrderId(order.Id);
             
         }
 

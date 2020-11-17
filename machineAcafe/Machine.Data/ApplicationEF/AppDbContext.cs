@@ -16,6 +16,9 @@ namespace Machine.Data.ApplicationEF
 
         public DbSet<Drink> drinks { get; set; }
         public DbSet<Badge> badges { get; set; }
+        public DbSet<Order> orders{ get; set; }
+        public DbSet<OrderDetails> orderDetails { get; set; }
+
 
 
     }

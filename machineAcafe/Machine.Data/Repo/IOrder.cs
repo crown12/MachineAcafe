@@ -2,15 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
     public interface IOrder
     {
-        Order GetLastOrder();
-        Order AddOrder(Order order);
-        IEnumerable<Order> GetAllOrders();
-        Order GetOrderByBadgeId(int? badgeId);
-        Order GetOrderByBadgeSerial(string serial);
+        Task<Order> GetLastOrder();
+        Task AddOrder(Order order);
+        Task<IEnumerable<Order>> GetAllOrders();
+        Task<Order> GetOrderByBadgeId(int? badgeId);
+        Task<Order> GetOrderByBadgeSerial(string serial);
+        Task<int> Commit();
     }
 }

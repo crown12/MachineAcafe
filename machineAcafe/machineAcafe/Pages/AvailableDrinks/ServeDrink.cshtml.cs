@@ -53,20 +53,21 @@ namespace machineAcafe.Pages.AvailableDrinks
                 return Page();   
             }
 
-            if (badge.Find(drinkOrder.BadgeSerial) != null)
+            var badgeExists =await badge.Find(drinkOrder.BadgeSerial);
+            if (badgeExists != null)
             {
                 var Order = new Order();
                 var OrderDtl = new OrderDetails();
                 var sugar = new Sugar(drinkOrder.Quantity);
 
-                Order.Badge = badge.Find(drinkOrder.BadgeSerial);
-                order.AddOrder(Order);
+                Order.Badge = badgeExists;
+                await order.AddOrder(Order);
 
                 OrderDtl.Drink = await drinks.GetDrinkById(drinkOrder.DrinkId);
                 OrderDtl.Mug = drinkOrder.Mug;
                 sugar.Add(OrderDtl);
 
-                var result = orderDetail.Add(OrderDtl, Order.Badge.Id);
+                await orderDetail.Add(OrderDtl, Order.Badge.Id);
 
             }
            
