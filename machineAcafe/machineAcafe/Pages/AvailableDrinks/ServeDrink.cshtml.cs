@@ -35,7 +35,7 @@ namespace machineAcafe.Pages.AvailableDrinks
 
         public List<Drink> Drinks{ get; set; }      
 
-        [BindProperty(SupportsGet =true)]
+        [BindProperty]
         public DrinkOrder drinkOrder { get; set; }
        
         public void  OnGet()
@@ -56,18 +56,7 @@ namespace machineAcafe.Pages.AvailableDrinks
             var badgeExists =await badge.Find(drinkOrder.BadgeSerial);
             if (badgeExists != null)
             {
-                var Order = new Order();
-                var OrderDtl = new OrderDetails();
-                var sugar = new Sugar(drinkOrder.Quantity);
-
-                Order.Badge = badgeExists;
-                await order.AddOrder(Order);
-
-                OrderDtl.Drink = await drinks.GetDrinkById(drinkOrder.DrinkId);
-                OrderDtl.Mug = drinkOrder.Mug;
-                sugar.Add(OrderDtl);
-
-                await orderDetail.Add(OrderDtl, Order.Badge.Id);
+                await AddOrder(badgeExists);
 
             }
            
@@ -88,6 +77,22 @@ namespace machineAcafe.Pages.AvailableDrinks
             };
 
             return JsonSerializer.Deserialize<List<Drink>>(stringData, options);
+        }
+
+        public async Task AddOrder(Badge badge)
+        {
+            var Order = new Order();
+            var OrderDtl = new OrderDetails();
+            var sugar = new Sugar(drinkOrder.Quantity);
+
+            Order.Badge = badge;
+            await order.AddOrder(Order);
+
+            OrderDtl.Drink = await drinks.GetDrinkById(drinkOrder.DrinkId);
+            OrderDtl.Mug = drinkOrder.Mug;
+            sugar.Add(OrderDtl);
+
+            await orderDetail.Add(OrderDtl, Order.Badge.Id);
         }
     }
 }
