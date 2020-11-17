@@ -14,9 +14,8 @@ namespace Machine.Core.Entities
         
         public Drink Drink { get; set; }
        
-        public int SugarQuantity { get; set; }
+        public int SugarQuantity { get; set; }        
         
-        [Required(ErrorMessage ="Please select an option.")]
         public bool Mug { get; set; }
     }
 }

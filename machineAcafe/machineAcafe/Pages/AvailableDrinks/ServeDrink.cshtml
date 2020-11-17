@@ -11,21 +11,21 @@
 
         <div class="form-group row ">
             <div class="col-3">
-                <label asp-for="Badge.Serial"> Badge : </label>
+                <label asp-for="drinkOrder.BadgeSerial"> Badge : </label>
             </div>
             <div class="col-7">
-                <input id="badge" class="form-control" asp-for="Badge.Serial" /> <span class="badge badge-info"> Optional </span>
+                <input id="badge" class="form-control" asp-for="drinkOrder.BadgeSerial" /> <span class="badge badge-info"> Optional </span>
             </div>
             <div class="alert-info" id="lastOrder"></div>
         </div>
 
         <div class="form-group row ">
             <div class="col-3">
-                <label asp-for="Drink.Name"> Drink : </label>
+                <label asp-for="drinkOrder.DrinkId"> Drink : </label>
             </div>
             <div class="col-7">
                 <select id="drink" class="form-control"
-                        asp-for="Drink.Id"
+                        asp-for="drinkOrder.DrinkId"
                         asp-items="@(new SelectList(Model.Drinks,"Id", "Name"))">
                 </select>
             </div>
@@ -34,26 +34,26 @@
 
         <div class="form-group row ">
             <div class="col-3">
-                <label asp-for="Sugar.Quantity"> Sugar : </label>
+                <label asp-for="drinkOrder.Quantity"> Sugar : </label>
             </div>
             <div class="col-3">
-                <input id="sugar" class="form-control" asp-for="Sugar.Quantity" />
+                <input id="sugar" class="form-control" asp-for="drinkOrder.Quantity" />
             </div>
-            <span asp-validation-for="Sugar.Quantity" class="text-danger"></span>
+            <span asp-validation-for="drinkOrder.Quantity" class="text-danger"></span>
         </div>
 
         <div class="form-group row ">
             <div class="col-3">
-                <label asp-for="OrderDtl.Mug"> Own Mug : </label>
+                <label asp-for="drinkOrder.Mug"> Own Mug : </label>
             </div>
             <div class="col-7">
-                <select id="sltMug" class="form-control" asp-for="OrderDtl.Mug">
+                <select id="sltMug" class="form-control" asp-for="drinkOrder.Mug" >
                     <option value="">Personal Mug?</option>
                     <option value="true"> Yes, I have it.</option>
                     <option value="false"> No, I don't have it.</option>
 
                 </select>
-                <span asp-validation-for="OrderDtl.Mug" class="text-danger"></span>
+                <span asp-validation-for="drinkOrder.Mug" class="text-danger"></span>
             </div>
         </div>
 

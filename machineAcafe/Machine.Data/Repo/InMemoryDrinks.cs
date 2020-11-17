@@ -27,7 +27,7 @@ namespace Machine.Data.Repo
 
         public Drink GetDrinkById(int id)
         {
-            return Drinks.SingleOrDefault(d => d.Id == id);
+            return  Drinks.SingleOrDefault(d => d.Id == id) ;
         }
     }
 }

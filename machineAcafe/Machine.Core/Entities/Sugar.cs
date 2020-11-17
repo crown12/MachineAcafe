@@ -7,8 +7,12 @@ namespace Machine.Core.Entities
 {
     public class Sugar : ITaste
     {
-        [Range(10, 70, ErrorMessage = "Value must be from 10 to 70")]
-        public int Quantity { get; set; }     
+        private int Quantity { get; set; }
+        
+        public Sugar(int quantity)
+        {
+            Quantity = quantity;
+        }        
        
         public void Add(OrderDetails OrderDtl)
         {

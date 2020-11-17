@@ -7,6 +7,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Machine.Core.Entities;
 using Machine.Data.Repo;
+using machineAcafe.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -32,63 +33,42 @@ namespace machineAcafe.Pages.AvailableDrinks
             this.orderDetail = orderDetail;
         }
 
-        public List<Drink> Drinks{ get; set; }
-        
-        [BindProperty]
-        public Order Order { get; set; }
+        public List<Drink> Drinks{ get; set; }      
 
-        [BindProperty]
-        public Badge Badge { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public DrinkOrder drinkOrder { get; set; }
 
-        [BindProperty]
-        public Drink Drink { get; set; }
-
-        [BindProperty]
-        public OrderDetails OrderDtl{ get; set; }
-        
-        [BindProperty(SupportsGet =true)]        
-        public  Sugar Sugar { get; set; }
-        //[BindProperty(SupportsGet = true)]
-        //public string BadgeId { get; set; }
 
         public void OnGet()
-        {
-            
-            Drinks = drinks.GetAllDrinks().ToList();
-            
-            Sugar.Quantity = 20;
-
+        {            
+            Drinks = drinks.GetAllDrinks().ToList();            
+            drinkOrder.Quantity = 6;            
         }
 
         public IActionResult OnPost()
         {
           
-            if (ModelState.IsValid )
-            {
-                
-                if (badge.Find(Badge.Serial) != null)
-                {                    
-                    OrderDtl.Drink = drinks.GetDrinkById(Drink.Id);
-                    Order.Badge = badge.Find(Badge.Serial);                 
-                    Sugar.Add(OrderDtl);
-
-                    order.AddOrder(Order);
-                    
-                    var result = orderDetail.Add(OrderDtl, Order.Badge.Id);
-
-                }
-                else
-                {
-                    return RedirectToPage("./Thanks");
-                }
-           
-            
+            if (!ModelState.IsValid )
+            {   // var errors = ModelState.Values.SelectMany(v => v.Errors);
+                Drinks = drinks.GetAllDrinks().ToList();             
+                return Page();   
             }
-            else
+
+            if (badge.Find(drinkOrder.BadgeSerial) != null)
             {
-                Drinks =  drinks.GetAllDrinks().ToList();
-               // var errors = ModelState.Values.SelectMany(v => v.Errors);
-                return Page();
+                var Order = new Order();
+                var OrderDtl = new OrderDetails();
+                var sugar = new Sugar(drinkOrder.Quantity);
+
+                Order.Badge = badge.Find(drinkOrder.BadgeSerial);
+                order.AddOrder(Order);
+
+                OrderDtl.Drink = drinks.GetDrinkById(drinkOrder.DrinkId);
+                OrderDtl.Mug = drinkOrder.Mug;
+                sugar.Add(OrderDtl);
+
+                var result = orderDetail.Add(OrderDtl, Order.Badge.Id);
+
             }
            
             return RedirectToPage("./Thanks");
