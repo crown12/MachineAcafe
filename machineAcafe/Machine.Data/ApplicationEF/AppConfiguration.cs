@@ -11,9 +11,14 @@ namespace Machine.Data.ApplicationEF
         public AppConfiguration()
         {
             var configBuilder = new ConfigurationBuilder();
-            //var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
-            var path = Path.Combine(@"E:\users\Exam\machineAcafe\machineAcafe", "appsettings.json");
-            configBuilder.AddJsonFile(path, false);
+
+            var path = Directory.GetCurrentDirectory();
+            var rootProject = Directory.GetParent(path) + "\\machineAcafe";
+            
+            var pathMain = Path.Combine(rootProject, "appsettings.json");
+           
+           
+            configBuilder.AddJsonFile(pathMain, false);
 
             var root = configBuilder.Build();
             var appSetting = root.GetSection("ConnectionStrings:MachineCafe");

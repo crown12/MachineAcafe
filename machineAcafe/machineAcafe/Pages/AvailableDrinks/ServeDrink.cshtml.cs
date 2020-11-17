@@ -38,18 +38,18 @@ namespace machineAcafe.Pages.AvailableDrinks
         [BindProperty(SupportsGet =true)]
         public DrinkOrder drinkOrder { get; set; }
        
-        public void OnGet()
+        public async Task OnGet()
         {            
-            Drinks = drinks.GetAllDrinks().ToList();            
+            Drinks = await drinks.GetAllDrinks();            
             //drinkOrder.Quantity = 6;            
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
           
             if (!ModelState.IsValid )
             {   // var errors = ModelState.Values.SelectMany(v => v.Errors);
-                Drinks = drinks.GetAllDrinks().ToList();             
+                Drinks = await drinks.GetAllDrinks();             
                 return Page();   
             }
 
@@ -62,7 +62,7 @@ namespace machineAcafe.Pages.AvailableDrinks
                 Order.Badge = badge.Find(drinkOrder.BadgeSerial);
                 order.AddOrder(Order);
 
-                OrderDtl.Drink = drinks.GetDrinkById(drinkOrder.DrinkId);
+                OrderDtl.Drink = await drinks.GetDrinkById(drinkOrder.DrinkId);
                 OrderDtl.Mug = drinkOrder.Mug;
                 sugar.Add(OrderDtl);
 

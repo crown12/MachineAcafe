@@ -24,10 +24,10 @@ namespace machineAcafe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IDrink, InMemoryDrinks>();
-            services.AddScoped<IBadge, InMemoryBadges>();
-            services.AddScoped<IOrder, InMemoryOrders>();
-            services.AddScoped<IOrderDetail, InMemoryOrderDetails>();
+           // services.AddScoped<IDrink, sqlDrinks>();
+          //  services.AddScoped<IBadge, InMemoryBadges>();
+//            services.AddScoped<IOrder, InMemoryOrders>();
+  //          services.AddScoped<IOrderDetail, InMemoryOrderDetails>();
             services.AddRazorPages();
         }
 

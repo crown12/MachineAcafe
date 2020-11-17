@@ -8,8 +8,8 @@ namespace Machine.Data.Repo
 {
     public interface IDrink
     {
-        List<Drink> GetAllDrinks();
-        Drink GetDrinkById(int id);
+        Task<List<Drink>> GetAllDrinks();
+        Task<Drink> GetDrinkById(int id);
 
     }
 }

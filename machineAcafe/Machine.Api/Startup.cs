@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Machine.Data.ApplicationEF;
 using Machine.Data.Repo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,10 +28,13 @@ namespace Machine.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var appConfig = new AppConfiguration();
             services.AddControllers();
-            
+            services.AddDbContextPool<AppDbContext>(options => 
+                                    options.UseSqlServer(
+                                        appConfig.SqlConnection));
 
-            services.AddScoped<IDrink, InMemoryDrinks>();
+            services.AddScoped<IDrink, sqlDrinks>();
             services.AddScoped<IBadge, InMemoryBadges>();
             services.AddScoped<IOrder, InMemoryOrders>();
             services.AddScoped<IOrderDetail, InMemoryOrderDetails>();

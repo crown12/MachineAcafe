@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Machine.Data.Repo
 {
-    public class InMemoryDrinks : IDrink
+    public class InMemoryDrinks 
     {
         List<Drink> Drinks { get; set; }
         public InMemoryDrinks()

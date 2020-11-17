@@ -21,9 +21,9 @@ namespace Machine.Api.Controllers
         }
         // GET: api/<DrinksController>
         [HttpGet]
-        public List<Drink> Get()
+        public async Task<List<Drink>> Get()
         {
-            return drinks.GetAllDrinks().ToList();
+            return await drinks.GetAllDrinks();
         }
 
         // GET api/<DrinksController>/5

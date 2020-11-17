@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Machine.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,9 @@ namespace Machine.Data.ApplicationEF
         {
                 
         }
+
+        public DbSet<Drink> drinks { get; set; }
+        public DbSet<Badge> badges { get; set; }
 
 
     }
